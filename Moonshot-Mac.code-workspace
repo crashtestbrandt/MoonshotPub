@@ -1,0 +1,689 @@
+{
+	"folders": [
+		{
+			"name": "Moonshot",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/Users/Shared/Epic Games/UE_5.4"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"files.associations": {
+			"*.ipp": "cpp",
+			"fft": "cpp",
+			"ios": "cpp"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Moonshot Mac Release Package",
+				"dependsOrder": "sequence",
+				"dependsOn": [
+					"Changelog: Prebuild Updates",
+					"Moonshot Mac Development Package"
+				],
+				"group": "build",
+				"type": "shell",
+				"problemMatcher": []
+			},
+			{
+				"label": "Moonshot Mac Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Debug",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Debug",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Moonshot Mac Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Debug",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"DebugGame",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"DebugGame",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Moonshot Mac DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"DebugGame",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Development",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Development",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Moonshot Mac Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Development",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Development Package",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/RunUAT.sh",
+				"args": [
+					"BuildCookRun",
+					"-nop4",
+					"-utf8output",
+					"-cook",
+					"-project=/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-target=Moonshot",
+					"-platform=Mac",
+					"-stage",
+					"-archive",
+					"-package",
+					"-build",
+					"-clean",
+					"-pak",
+					"-iostore",
+					"-prereqs",
+					"-archivedirectory=/Users/frazbot/Repos/Moonshot/Packages/Mac",
+					"-manifests",
+					"-nocompileuat",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Test",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Test",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Moonshot Mac Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Test",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Shipping",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Shipping",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Moonshot Mac Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "Moonshot Mac Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Moonshot",
+					"Mac",
+					"Shipping",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "MoonshotEditor Mac Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"MoonshotEditor",
+					"Mac",
+					"Debug",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "MoonshotEditor Mac Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"MoonshotEditor",
+					"Mac",
+					"Debug",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MoonshotEditor Mac Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "MoonshotEditor Mac Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"MoonshotEditor",
+					"Mac",
+					"Debug",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "MoonshotEditor Mac DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"MoonshotEditor",
+					"Mac",
+					"DebugGame",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "MoonshotEditor Mac DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"MoonshotEditor",
+					"Mac",
+					"DebugGame",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MoonshotEditor Mac DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "MoonshotEditor Mac DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"MoonshotEditor",
+					"Mac",
+					"DebugGame",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "MoonshotEditor Mac Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"MoonshotEditor",
+					"Mac",
+					"Development",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "MoonshotEditor Mac Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"MoonshotEditor",
+					"Mac",
+					"Development",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MoonshotEditor Mac Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "MoonshotEditor Mac Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"MoonshotEditor",
+					"Mac",
+					"Development",
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+                "label": "Changelog: Add Version",
+                "type": "shell",
+                "command": "python3",
+				"args": [
+					"scripts/changelog.py",
+					"--add-version"
+				],
+                "group": "build",
+                "problemMatcher": []
+            },
+            {
+                "label": "Changelog: Add Change",
+                "type": "shell",
+                "command": "python3",
+                "args": [
+					"scripts/changelog.py",
+					"--add-change",
+					"${input:changeDescription}"
+                ],
+                "group": "build",
+                "problemMatcher": []
+            },
+            {
+                "label": "Changelog: Update README",
+                "type": "shell",
+                "command": "python3",
+				"args": [
+					"scripts/changelog.py",
+					"--update-readme"
+				],
+                "group": "build",
+                "problemMatcher": []
+            },
+			{
+                "label": "Changelog: Update INI",
+                "type": "shell",
+                "command": "python3",
+                "args": [
+					"scripts/changelog.py",
+					"--update-ini"
+                ],
+                "group": "build",
+                "problemMatcher": []
+            },
+            {
+                "label": "Changelog: Prebuild Updates",
+                "type": "shell",
+                "command": "python3",
+				"args": [
+					"scripts/changelog.py",
+					"--update-ini",
+					"--update-readme",
+					"&&",
+					"cp",
+					"Changelog.json",
+					"./Content/Moonshot/Data/PatchNotes.json"
+				],
+                "group": "build",
+                "problemMatcher": []
+            },
+		],
+		"inputs": [
+            {
+                "id": "changeDescription",
+                "type": "promptString",
+                "description": "Enter the change description"
+            }
+        ]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch Moonshot (Debug)",
+				"request": "launch",
+				"program": "/Users/frazbot/Repos/Moonshot/Binaries/Mac/Moonshot-Mac-Debug.app/Contents/MacOS/Moonshot-Mac-Debug",
+				"preLaunchTask": "Moonshot Mac Debug Build",
+				"args": [
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Moonshot (DebugGame)",
+				"request": "launch",
+				"program": "/Users/frazbot/Repos/Moonshot/Binaries/Mac/Moonshot-Mac-DebugGame.app/Contents/MacOS/Moonshot-Mac-DebugGame",
+				"preLaunchTask": "Moonshot Mac DebugGame Build",
+				"args": [
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Moonshot (Development)",
+				"request": "launch",
+				"program": "/Users/frazbot/Repos/Moonshot/Binaries/Mac/Moonshot.app/Contents/MacOS/Moonshot",
+				"preLaunchTask": "Moonshot Mac Development Build",
+				"args": [
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Moonshot (Test)",
+				"request": "launch",
+				"program": "/Users/frazbot/Repos/Moonshot/Binaries/Mac/Moonshot-Mac-Test.app/Contents/MacOS/Moonshot-Mac-Test",
+				"preLaunchTask": "Moonshot Mac Test Build",
+				"args": [
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Moonshot (Shipping)",
+				"request": "launch",
+				"program": "/Users/frazbot/Repos/Moonshot/Binaries/Mac/Moonshot-Mac-Shipping.app/Contents/MacOS/Moonshot-Mac-Shipping",
+				"preLaunchTask": "Moonshot Mac Shipping Build",
+				"args": [
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch MoonshotEditor (Debug)",
+				"request": "launch",
+				"program": "/Users/Shared/Epic Games/UE_5.4/Engine/Binaries/Mac/UnrealEditor-Mac-Debug.app/Contents/MacOS/UnrealEditor-Mac-Debug",
+				"preLaunchTask": "MoonshotEditor Mac Debug Build",
+				"args": [
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject"
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch MoonshotEditor (DebugGame)",
+				"request": "launch",
+				"program": "/Users/Shared/Epic Games/UE_5.4/Engine/Binaries/Mac/UnrealEditor-Mac-DebugGame.app/Contents/MacOS/UnrealEditor-Mac-DebugGame",
+				"preLaunchTask": "MoonshotEditor Mac DebugGame Build",
+				"args": [
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject"
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch MoonshotEditor (Development)",
+				"request": "launch",
+				"program": "/Users/Shared/Epic Games/UE_5.4/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor",
+				"preLaunchTask": "MoonshotEditor Mac Development Build",
+				"args": [
+					"/Users/frazbot/Repos/Moonshot/Moonshot.uproject"
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Mac Development Build",
+				"program": "/Users/Shared/Epic Games/UE_5.4/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/Users/frazbot/Repos/Moonshot/Moonshot.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/Users/Shared/Epic Games/UE_5.4"
+			}
+		]
+	}
+}
