@@ -1,0 +1,96 @@
+[
+    {
+        "Version": "0.0.1",
+        "PrereleaseType": "Alpha",
+        "Changes": [
+            "Added changelog and versioning system",
+            "Danger Dots are all destroyed when maximum number (64) is reached",
+            "Added volume adjustment to settings",
+            "Respawn menu option works now",
+            "Dynamic accuracy and animated reticle"
+        ]
+    },
+    {
+        "Version": "0.0.2",
+        "PrereleaseType": "Alpha",
+        "Changes": [
+            "Gameplay settings persist after death (but not between games)",
+            "Aim is now a percentage of Look",
+            "Added optional Author field to Submit Feedback form",
+            "Added EULA"
+        ]
+    },
+    {
+        "Version": "0.0.3",
+        "PrereleaseType": "Alpha",
+        "Changes": [
+            "Player space now orbits Earth kind of realistically"
+        ]
+    },
+    {
+        "Version": "0.0.4",
+        "PrereleaseType": "Alpha",
+        "Changes": [
+            "First person toggle enabled (uses [ . ])"
+        ]
+    },
+    {
+        "Version": "0.0.5",
+        "PrereleaseType": "Alpha",
+        "Changes": [
+            "Aim offset replicating to multiplayer clients",
+            "Firing weapons induces recoil ",
+            "Weapons can be picked up from the environment",
+            "Partially implemented reloaad animation"
+        ]
+    },
+    {
+        "Version": "0.0.6",
+        "PrereleaseType": "Alpha",
+        "Changes": [
+            "Gavin's back!",
+            "Weapon detaches on character death.",
+            "Add inertial roll (enabled by default; adjust in gameplay settings).",
+            "Dampen applies to angular velocity (adjust strength in gameplay settings) ."
+        ]
+    },
+    {
+        "Version": "0.0.8",
+        "PrereleaseType": "Alpha",
+        "Changes": [
+            "Rotations no longer cause unbearable stuttering.",
+            "First-person ADS is usable now (but still needs further improvement).",
+            "Settings are simplified and rewired.",
+            "Gamepad controls have Gameplay parity with K&M; UI not tested.",
+            "Respawn countdown after death."
+        ]
+    },
+    {
+        "Version": "0.0.9",
+        "PrereleaseType": "Alpha",
+        "ReleaseDate": "2024-08-17",
+        "Commit": "847f07194ca420083c9f1c40f5ff553731669efa",
+        "Changes": [
+            "Debug console enabled. Toggle with \"`\". Search \"Moonshot\" for some useful commands.",
+            "Valid IDs for MoonshotEquipItem: 0, 3, 4",
+            "Weapons can be stowed on the back and swapped out. Use [1] and [2] keys. "
+        ]
+    },
+    {
+        "Version": "0.0.10",
+        "PrereleaseType": "Alpha",
+        "ReleaseDate": "2024-08-19",
+        "Commit": "7bdc0c0c35892b4a0c4b5c88c259efb9fbb9de4d",
+        "Changes": [
+            "Double jump to detach.",
+            "Add humans and EVA suit models."
+        ]
+    },
+    {
+        "Version": "0.0.11",
+        "PrereleaseType": "Alpha",
+        "ReleaseDate": "2024-08-21",
+        "Commit": "378324851b01e7a8cb5465fbe641a6997e3a3011",
+        "Changes": []
+    }
+]
